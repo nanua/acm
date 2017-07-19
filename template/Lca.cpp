@@ -8,7 +8,7 @@ int lca(int x, int y){
 	for(int i = 20, j = d[x]-d[y]; i >= 0; --i)
 		if(j & (1 << i)) x = g[x][i];
 	if(x == y) return x;
-	for(int i = 20; i; --i)
+	for(int i = 20; i >= 0; --i)
 		if(g[x][i] != g[y][i])
 			x = g[x][i], y = g[y][i];
 	return g[x][0];
